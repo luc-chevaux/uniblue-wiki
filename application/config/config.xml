@@ -1,71 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configdata>
-	<sharedconfig>
-		<application>
-			<name>Wiki</name>
-			<desc>This is the Uniblue Wiki</desc>
-			<version>1.0</version>
-			<license>This product is released under the GPL license.</license>
-			<author>Luca Martini</author>
-		</application>
-		<session>
-			<name>wiki</name>
-			<remember_me_seconds>864000</remember_me_seconds>
-			<use_only_cookies>on</use_only_cookies>
-		</session>
-		<authentication>
-			<active>on</active>
-			<timeout>60</timeout>
-			<salt>wiki</salt>
-		</authentication>
-		<path>
-			<languages></languages>
-			<languagesxml></languagesxml>
-			<regionsxml></regionsxml>
-		</path>
-		<admintools>
-			<webmaster>
-				<name>Luca Martini</name>
-				<email>luca.martini@webeng.it</email>
-			</webmaster>
-		</admintools>
-	</sharedconfig>
-	
-	<!-- Config for development servers -->
-	<development extends="sharedconfig">
-		<site>
-			<hostname>wiki.uniblue.com:6060</hostname>
-			<url>http://wiki.uniblue.com:6060</url>
-			<baseurl>/</baseurl>
-			<title>This is the Uniblue Wiki</title>
-			<frontend_url></frontend_url>
-		</site>
-		<mail>
-			<auth_type>login</auth_type>
-			<auth_username>postmaster@uniblue.com</auth_username>
-			<auth_password>uniblue</auth_password>
-			<use_auth>0</use_auth>
-			<smtp>localhost</smtp>
-			<mailer_address>postmaster@uniblue.com</mailer_address>
-			<mailer_nickname>Uniblue</mailer_nickname>
-			<admin_address>postmaster@uniblue.com</admin_address>
-			<admin_fullname>Luca Martini</admin_fullname>
-		</mail>
-		<database>
-			<adapter>PDO_MYSQL</adapter>
-			<params>
-				<host>localhost</host>
-				<username>your_mysql_username</username>
-				<password>your_mysql_password</password>
-				<dbname>uniblue-wiki</dbname>
-			</params>
-		</database>
-		<environment>
-			<default_timezone>Europe/Rome</default_timezone>
-			<debug>1</debug>
-			<compress_output>0</compress_output>
-			<log_queries>1</log_queries>
-			<display_errors>1</display_errors>
-		</environment>
-	</development>
+    <sharedconfig>
+        <application>
+            <name>Wiki</name>
+            <desc>This is the Uniblue Wiki</desc>
+            <version>1.0</version>
+            <license>This product is released under the GPL license.</license>
+            <author>Luca Martini</author>
+        </application>
+        <session>
+            <name>wiki</name>
+            <remember_me_seconds>864000</remember_me_seconds>
+            <use_only_cookies>on</use_only_cookies>
+        </session>
+        <authentication>
+            <active>on</active>
+            <timeout>60</timeout>
+            <salt>wiki</salt>
+        </authentication>
+        <path>
+            <languages></languages>
+            <languagesxml></languagesxml>
+            <regionsxml></regionsxml>
+        </path>
+        <admintools>
+            <webmaster>
+                <name>Luca Martini</name>
+                <email>luca.martini@webeng.it</email>
+            </webmaster>
+        </admintools>
+    </sharedconfig>
+
+    <!-- Config for development servers -->
+    <development extends="sharedconfig">
+        <site>
+            <hostname>wiki.uniblue.com:6060</hostname>
+            <url>http://wiki.uniblue.com:6060</url>
+            <baseurl>/</baseurl>
+            <title>This is the Uniblue Wiki</title>
+            <frontend_url></frontend_url>
+        </site>
+        <mail>
+            <auth_type>login</auth_type>
+            <auth_username>postmaster@uniblue.com</auth_username>
+            <auth_password>uniblue</auth_password>
+            <use_auth>0</use_auth>
+            <smtp>localhost</smtp>
+            <mailer_address>postmaster@uniblue.com</mailer_address>
+            <mailer_nickname>Uniblue</mailer_nickname>
+            <admin_address>postmaster@uniblue.com</admin_address>
+            <admin_fullname>Luca Martini</admin_fullname>
+        </mail>
+        <database>
+            <adapter>PDO_MYSQL</adapter>
+            <params>
+                <host>localhost</host>
+                <username>your_mysql_username</username>
+                <password>your_mysql_password</password>
+                <dbname>uniblue-wiki</dbname>
+            </params>
+        </database>
+        <environment>
+            <default_timezone>Europe/Rome</default_timezone>
+            <debug>1</debug>
+            <compress_output>0</compress_output>
+            <log_queries>1</log_queries>
+            <display_errors>1</display_errors>
+        </environment>
+    </development>
 </configdata>
