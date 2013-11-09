@@ -1,0 +1,103 @@
+<?php
+// get an instance of front controller
+$fc = Zend_Controller_Front::getInstance();
+// get an instance of configuration manager
+$conf = Zend_Registry::getInstance()->get("config");
+// get an instance of zend session
+$sess = new Zend_Session_Namespace($conf->session->name . "_" .APPSTAGE);
+?>
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta http-equiv="content-Type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- custom page script -->
+        <?php
+		echo $this->headTitle();
+	    echo $this->headScript();
+	    echo $this->headStyle();
+	    ?>
+
+        <!-- include bootstrap -->
+        <link rel="stylesheet" href="<?php echo $this->baseUrl(); ?>/lib/bootstrap/css/bootstrap.min.css"/>
+
+        <!-- include custom css -->
+        <link rel="stylesheet" href="<?php echo $this->baseUrl(); ?>/css/layout.css"/>
+	</head>
+
+    <body>
+        <div id="ccapp-container" class="panel panel-default">
+            <div class="aligned-center">
+                <img src="<?php echo $this->baseUrl(); ?>/img/uniblue.png" class="wikiLogo" />
+            </div>
+            <div class="page-header">
+                <h2 class="appname"><?php echo $this->appname; ?></h2>
+                <span class="header_slogan"><b><?php echo $this->placeholder("title") ?></b><br/><small>ver 1.0.0.beta</small></span>
+            </div>
+            <ol class="breadcrumb">
+                <li><a href="<?php echo $conf->site->url; ?>">Wiki Home</a></li>
+                <li class="active"><?php echo $this->placeholder("page") ?></li>
+            </ol>
+
+            <div id="wiki-content">
+                <div>
+                    <!-- display user panel if logged -->
+                    <?php if ($this->auth) { ?>
+                        <div class="panel panel-default panel-login">
+                            <div class="panel-body panel-primary">
+                                <?php if ($sess->username != null) { ?><p>Hi <?php echo $sess->username; ?>, welcome to our intranet wiki!</p><?php } ?>
+                                <?php if ($sess->username == null) { ?><p>Hi Anonymous, welcome to our intranet wiki!</p><?php } ?>
+                                <?php if ($sess->username == null) { ?><a href="/index/login" class="btn btn-xs btn-primary">Login<i class="icon-white icon-cog"></i></a><?php } ?>
+                                <?php if ($sess->username != null) { ?><a href="/index/logout" class="btn btn-xs btn-primary">Logout<i class="icon-white icon-cog"></i></a><?php } ?>
+                                <?php if ($sess->username == null) { ?><a href="/index/register" class="btn btn-xs btn-primary">Register<i class="icon-white icon-shopping-cart"></i></a><?php } ?>
+                                <?php if ($sess->username != null) { ?><a href="/wiki/create" class="btn btn-xs btn-primary">Create Wiki<i class="icon-white icon-shopping-cart"></i></a><?php } ?>
+                            </div>
+                        </div>
+                    <?php } ?>
+
+                    <?php echo $this->layout()->content ?>
+                </div>
+            </div>
+        </div>
+
+        <!-- loads script after for better performance-->
+        <script src="<?php echo $conf->site->url; ?>/lib/jquery/jquery-2.0.3.min.js"></script>
+        <script src="<?php echo $conf->site->url; ?>/lib/tinymce/tinymce.min.js"></script>
+        <script type="text/javascript">
+            tinymce.init({
+                autosave_restore_when_empty: false,
+                selector: "textarea",
+                plugins: [
+                    "advlist autolink autosave link image lists charmap print preview hr anchor pagebreak spellchecker",
+                    "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+                    "table contextmenu directionality emoticons template textcolor paste fullpage textcolor"
+                ],
+
+                toolbar1: "newdocument fullpage | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | styleselect formatselect fontselect fontsizeselect",
+                toolbar2: "cut copy paste | searchreplace | bullist numlist | outdent indent blockquote | undo redo | link unlink anchor image media code | inserttime preview | forecolor backcolor",
+                toolbar3: "table | hr removeformat | subscript superscript | charmap emoticons | print fullscreen | ltr rtl | spellchecker | visualchars visualblocks nonbreaking template pagebreak restoredraft",
+
+                menubar: false,
+                toolbar_items_size: 'small',
+
+                style_formats: [
+                    {title: 'Bold text', inline: 'b'},
+                    {title: 'Red text', inline: 'span', styles: {color: '#ff0000'}},
+                    {title: 'Red header', block: 'h1', styles: {color: '#ff0000'}},
+                    {title: 'Example 1', inline: 'span', classes: 'example1'},
+                    {title: 'Example 2', inline: 'span', classes: 'example2'},
+                    {title: 'Table styles'},
+                    {title: 'Table row 1', selector: 'tr', classes: 'tablerow1'}
+                ],
+
+                templates: [
+                    {title: 'Test template 1', content: 'Test 1'},
+                    {title: 'Test template 2', content: 'Test 2'}
+                ]
+            });
+        </script>
+        <script src="<?php echo $conf->site->url; ?>/lib/bootstrap/js/bootstrap.min.js"></script>
+        <script src="<?php echo $conf->site->url; ?>/lib/jquery-ui/js/jquery-ui-1.10.3.custom.min.js"></script>
+    </body>
+</html>

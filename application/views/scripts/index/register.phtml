@@ -1,0 +1,22 @@
+<?php
+	$this->headTitle($this->title);
+	$this->placeholder("title")->set($this->title);
+    $this->placeholder("page")->set($this->pagetitle);
+?>
+<div class="panel panel-default panel-end">
+    <div class="panel-heading">Authentication</div>
+    <div class="panel-body">
+        <p>Please fulfill the form with your user information.</p>
+        <?php
+        if((!empty($this->messaggi)) && (count($this->messaggi)>0)){
+            echo "<div class=\"sqlmessage\">";
+            foreach ($this->messaggi as $message) {
+                echo htmlentities($message)."<br/>";
+            }
+            echo "</div>";
+        }
+        ?>
+        <?php echo $this->form; ?>
+    </div>
+</div>
+

@@ -1,0 +1,19 @@
+<?php
+    // set title
+	$this->headTitle($this->title);
+
+    // set the placeholder value in the template
+	$this->placeholder("title")->set($this->title);
+    $this->placeholder("page")->set($this->pagetitle);
+
+    // get the wiki object
+    $wiki = $this->wiki;
+
+    // get the config
+    $conf = Zend_Registry::getInstance()->get("config");
+?>
+<div class="wiki_title">
+    <h1><?php echo $wiki["wiki_title"]; ?></h1>
+</div>
+<?php echo $wiki["wiki_body"]; ?>
+<a href="<?php echo $conf->site->url; ?>" class="btn btn-primary">Back to home</a>

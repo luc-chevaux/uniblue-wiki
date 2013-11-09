@@ -1,0 +1,346 @@
+body {
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background-image: url(../img/ui/groove.jpg);
+	background-repeat: repeat;
+}
+
+body.login {
+	background-color: #efefef;
+	background-image: none !important;
+}
+
+.clearRight:after {
+	clear: right !important;	
+}
+
+.justified {
+	text-align: justify;
+}
+
+.form-signin {
+	max-width: 300px;
+    padding: 19px 29px 29px;
+	margin: 0 auto 20px;
+	background-color: #fff;
+	border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+	margin-bottom: 10px;
+}
+.form-signin input[type="text"],
+.form-signin input[type="password"] {
+	font-size: 16px;
+	height: auto;
+	margin-bottom: 15px;
+	padding: 7px 9px;
+}
+
+.aligned-center {
+	text-align: center;
+	margin: 0 auto;	
+}
+
+.error {
+	color: red;
+	font-size: 1.2em;
+}
+
+.margin10 {
+	margin: 1em;	
+}
+
+.margin20 {
+	margin: 2em;	
+}
+
+.fieldSearch {
+	margin: 0em 0.4em 0em 0.4em;
+}
+
+.grayBackground {
+	background-color: #333;	
+}
+
+#DynamicGridLoading {
+	float:right; 
+	display:block;
+	margin: -0.6em auto auto 2em
+}
+
+.tableRow {
+	background-color: #333;	
+	color: white;
+}
+
+.pagination {
+	margin: 0 auto auto 0 !important;
+	width: 70%;
+	float:left; 
+	display:block;
+}
+
+.wikiLogo {
+	height: 4.5em;
+	float: left;
+}
+
+.logoLoginPage {
+	margin: 1em;
+	height: 7em !important;
+	float:none;
+}
+
+#ccapp-login-form {
+	margin: 2em auto;
+}
+
+#ccapp-container {
+	background-color: white;
+	margin: 0em 10em;
+	padding: 1em;
+}
+
+.page-header {
+	margin: 1.5em 0 0.5em 0 !important;
+    padding-bottom: 1em !important;
+}
+
+.panel {
+	background-color: #ffffff;
+	border: 1px solid transparent;
+	border-radius: 0.5em;
+	-moz-box-shadow: 0 0 0.5em #888;
+	-webkit-box-shadow: 0 0 0.5em #888;
+	box-shadow: 0 0 0.5em #888;
+}
+
+.panel-login {
+
+}
+
+.panel-end {
+    margin: 0 auto;
+}
+
+.header_slogan {
+    display: inline-block;
+    float: right;
+    font-style: italic;
+}
+
+.table-header {
+    background-color: #333333;
+    color: antiquewhite;
+    border-bottom: 2px dotted !important;
+    border-bottom-color: #cccccc;
+    border-top: 2px  dotted !important;
+    border-top-color: #cccccc;
+}
+
+.table-header th {
+    border: none !important;
+}
+
+h2.appname {
+    color: #bc0f11;
+    display: inline;
+}
+
+.wiki_title {
+    border-bottom: 2px dotted #cccccc;
+}
+
+.panel-body {
+  padding: 0.5em;
+}
+.panel-body:before,
+.panel-body:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.panel-body:after {
+  clear: both;
+}
+.panel > .list-group {
+  margin-bottom: 0;
+}
+.panel > .list-group .list-group-item {
+  border-width: 1px 0;
+}
+.panel > .list-group .list-group-item:first-child {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+.panel > .list-group .list-group-item:last-child {
+  border-bottom: 0;
+}
+.panel-heading + .list-group .list-group-item:first-child {
+  border-top-width: 0;
+}
+.panel > .table {
+  margin-bottom: 0;
+}
+.panel > .panel-body + .table {
+  border-top: 1px solid #dddddd;
+}
+.panel-heading {
+  padding: 10px 15px;
+  border-bottom: 1px solid transparent;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+.panel-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 16px;
+}
+.panel-title > a {
+  color: inherit;
+}
+.panel-footer {
+  padding: 10px 15px;
+  background-color: #f5f5f5;
+  border-top: 1px solid #dddddd;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.panel-group .panel {
+  margin-bottom: 0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.panel-group .panel + .panel {
+  margin-top: 5px;
+}
+.panel-group .panel-heading {
+  border-bottom: 0;
+}
+.panel-group .panel-heading + .panel-collapse .panel-body {
+  border-top: 1px solid #dddddd;
+}
+.panel-group .panel-footer {
+  border-top: 0;
+}
+.panel-group .panel-footer + .panel-collapse .panel-body {
+  border-bottom: 1px solid #dddddd;
+}
+.panel-default {
+  border-color: #dddddd;
+}
+.panel-default > .panel-heading {
+  color: #333333;
+  background-color: #f5f5f5;
+  border-color: #dddddd;
+}
+.panel-default > .panel-heading + .panel-collapse .panel-body {
+  border-top-color: #dddddd;
+}
+.panel-default > .panel-footer + .panel-collapse .panel-body {
+  border-bottom-color: #dddddd;
+}
+.panel-primary {
+  border-color: #428bca;
+}
+.panel-primary > .panel-heading {
+  color: #ffffff;
+  background-color: #428bca;
+  border-color: #428bca;
+}
+.panel-primary > .panel-heading + .panel-collapse .panel-body {
+  border-top-color: #428bca;
+}
+.panel-primary > .panel-footer + .panel-collapse .panel-body {
+  border-bottom-color: #428bca;
+}
+.panel-success {
+  border-color: #d6e9c6;
+}
+.panel-success > .panel-heading {
+  color: #468847;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+.panel-success > .panel-heading + .panel-collapse .panel-body {
+  border-top-color: #d6e9c6;
+}
+.panel-success > .panel-footer + .panel-collapse .panel-body {
+  border-bottom-color: #d6e9c6;
+}
+.panel-warning {
+  border-color: #fbeed5;
+}
+.panel-warning > .panel-heading {
+  color: #c09853;
+  background-color: #fcf8e3;
+  border-color: #fbeed5;
+}
+.panel-warning > .panel-heading + .panel-collapse .panel-body {
+  border-top-color: #fbeed5;
+}
+.panel-warning > .panel-footer + .panel-collapse .panel-body {
+  border-bottom-color: #fbeed5;
+}
+.panel-danger {
+  border-color: #eed3d7;
+}
+.panel-danger > .panel-heading {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #eed3d7;
+}
+.panel-danger > .panel-heading + .panel-collapse .panel-body {
+  border-top-color: #eed3d7;
+}
+.panel-danger > .panel-footer + .panel-collapse .panel-body {
+  border-bottom-color: #eed3d7;
+}
+.panel-info {
+  border-color: #bce8f1;
+}
+.panel-info > .panel-heading {
+  color: #3a87ad;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+.panel-info > .panel-heading + .panel-collapse .panel-body {
+  border-top-color: #bce8f1;
+}
+.panel-info > .panel-footer + .panel-collapse .panel-body {
+  border-bottom-color: #bce8f1;
+}
+
+.panel-heading > h3 {line-height:20px;}
+
+
+.ccPanel {
+	background-color: #FBB450;
+	padding: 1em;
+	-moz-border-radius: 0.5em;
+	border-radius: 0.5em;
+	-moz-box-shadow: 0.5em 0.5em 0.5em #ccc;
+	-webkit-box-shadow: 0.5em 0.5em 0.5em #ccc;
+	box-shadow: 0.5em 0.5em 0.5em #ccc;
+	margin: 0 !important 1em 0;
+}
+
+.resumeTable {
+	margin-bottom: 0em !important;
+}
+
+.btn-group {
+	vertical-align: inherit !important;
+}

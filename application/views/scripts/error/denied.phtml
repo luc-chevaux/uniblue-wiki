@@ -1,0 +1,8 @@
+<?php
+$this->headTitle("Error Page");
+$this->placeholder("title")->set($this->title);
+?>
+<?php if ($this->message): ?>
+	<p>Si &egrave; verificato il seguente errore:</p>
+	<?php echo $this->escape($this->message); ?>
+<?php endif; ?>

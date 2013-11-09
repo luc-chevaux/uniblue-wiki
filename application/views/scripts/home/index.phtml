@@ -1,0 +1,39 @@
+<?php
+	$this->headTitle($this->title);
+	$this->placeholder("title")->set($this->title);
+    $wikies = $this->wikies;
+?>
+<div class="panel panel-default panel-end">
+    <div class="panel-heading">Uniblue Wiki pages</div>
+    <div class="panel-body">
+        <p>These are our latest inserted wiki pages. Take care of write your own by <a href="/index/register">&laquo;registering here&raquo;</a>.</p>
+    </div>
+
+    <table class="table">
+        <thead>
+        <tr class="table-header">
+            <th>Visits</th>
+            <th>Topic</th>
+            <th>Contributor</th>
+            <th>Created</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+            <?php if (count($wikies) == 0) { ?>
+                <tr>
+                    <td colspan="5">No wikies found</td>
+                </tr>
+            <?php } ?>
+            <?php foreach ($wikies as $key => $value) { ?>
+                <tr>
+                    <td><?php echo $value["wiki_visits_count"]; ?></td>
+                    <td><?php echo $value["wiki_title"]; ?></td>
+                    <td><?php echo $value["user_name"]; ?></td>
+                    <td><?php echo $value["wiki_created"]; ?></td>
+                    <td><a href="wiki/view/url/<?php echo $value["wiki_persistent_url"]; ?>" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-chevron-right"></span> Read more</a></td>
+                </tr>
+            <?php } ?>
+        </tbody>
+    </table>
+</div>
