@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS `wiki_users` (
 --
 
 INSERT INTO `wiki_users` (`user_id`, `user_name`, `user_password`) VALUES
-(1, 'luca', 'd23bbd92e3c758f459d55bc25f20620b');
+(1, 'uniblue', '7a3bbf84a14b52436f1ed887c510a611');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
