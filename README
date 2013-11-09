@@ -1,0 +1,46 @@
+1) Install github for your platform
+
+2) Clone the repository locally by running
+   git clone https://github.com/luc-chevaux/uniblue-wiki.git
+
+3) Install MySQL latest version and create a database named uniblue-wiki
+
+4) Import the script located in [YOUR_CURRENT_PATH]/uniblue-wiki/resources/db/uniblue-wiki.sql
+   in UTF-8 mode by using phpMyAdmin or your favourite MySQL client
+
+5) Edit the file located in [YOUR_CURRENT_PATH]/uniblue-wiki/application/config/config.xml and
+   edit the following MySQL options by adding your username and password:
+
+    <params>
+        <host>localhost</host>
+        <username>[your_mysql_username]</username>
+        <password>[your_mysql_password]</password>
+        <dbname>uniblue-wiki</dbname>
+    </params>
+
+6) This application requires mod_rewrite to rewrite urls with Zend Framework. Please read the documentation
+   to install and enable it
+
+7) Modify your apache configuration to enable listening on port 6060 (/etc/apache2/ports.conf in Ubuntu Linux)
+   by adding:
+
+   Listen 6060
+
+8) Edit your Apache 2 virtual host configuration (/etc/apache2/sites-enabled/000-default in Ubuntu Linux) by
+   adding a virtual new virtual host (change the value [YOUR_CURRENT_PATH] with your current path):
+
+    <VirtualHost wiki.uniblue.com:6060>
+        ServerName   wiki.uniblue.com
+        DocumentRoot "[YOUR_CURRENT_PATH]/uniblue-wiki/public"
+        RewriteEngine off
+        <Location />
+            RewriteEngine On
+            RewriteCond %{REQUEST_FILENAME} -s [OR]
+            RewriteCond %{REQUEST_FILENAME} -l [OR]
+            RewriteCond %{REQUEST_FILENAME} -d
+            RewriteRule ^.*$ - [NC,L]
+            RewriteRule ^.*$ /index.php [NC,L]
+        </Location>
+    </VirtualHost>
+
+9) Open your browser at http://wiki.uniblue.com:6060/
